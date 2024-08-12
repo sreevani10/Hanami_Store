@@ -1,0 +1,89 @@
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    padding: 12px;
+    box-shadow: 0 1px 3px -2px black;
+    align-items: center;
+    background: fixed;
+    background-color: aquamarine;
+    z-index:10;
+    overflow: visible;
+    width: 100%;
+    top:0;
+    position: sticky;
+    
+}
+.image{
+    width:25%;
+}
+.nav-logo{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+}
+.nav-logo p{
+    color: rgb(4, 44, 36);
+    font-size: 25px;
+    font-weight: 600;
+}
+.input-wrapper{
+
+    background-color: white;
+    width:30%;
+    border-radius: 10px;
+    height: 1.5rem;
+    padding: 0 10px;
+    box-shadow: 0px 0px 8px #ddd;
+    display: flex;
+    align-items: center;
+
+}
+input{
+    background-color: transparent;
+    border: none;
+    height: 70%;
+    font-size: 0.7rem;
+    width: 100%;
+    margin-left: 2px;
+    
+    
+}
+
+input:focus{
+    outline: none;
+}
+#search-icon{
+    color: royalblue;
+}
+
+.nav-login-cart{
+    display: flex;
+    align-items: end;
+    gap:20px;
+}
+.nav-login-cart button{
+    width:100px;
+    height: 40px;
+    outline: none;
+    border: 1px solid rgb(4, 44, 36);
+    border-radius: 50px;
+    color:  rgb(4, 44, 36);
+    font-size: 15px;
+    font-weight: 500;
+    background-color:rgb(127, 255, 212);
+    cursor: pointer;
+
+}
+
+.nav-login-cart button:active{
+    background:#f3f3f3;
+}
+
+#cart-icon{
+    font-size: 2.0rem;
+    color:  rgb(4, 44, 36);
+   
+    
+}
+

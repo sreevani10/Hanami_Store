@@ -1,0 +1,130 @@
+
+[
+    {
+        "id":1,
+        "name":"Frock",
+        "price":500,
+        "rating":4.5,
+        "imgUrl":"./imgs/product1.jpeg",
+        "discount":"up to 20% discount",
+        "sale": true,
+        "outOfStock":false,
+        "tag":true
+    },
+    {
+        "id":2,
+        "name":"Jeans",
+        "price":600,
+        "rating":4.6,
+        "imgUrl":"./imgs/product2.jpeg",
+        "discount":"up to 10% discount",
+        "sale": true,
+        "outOfStock":false,
+        "tag":false
+    },
+    {
+        "id":3,
+        "name":"Saree",
+        "price":800,
+        "rating":4.9,
+        "imgUrl":"./imgs/product3.jpeg",
+        "discount":"up to 30% discount",
+        "sale": true,
+        "outOfStock":false,
+        "tag":false
+    },
+    {
+        "id":4,
+        "name":"Frock",
+        "price":500,
+        "rating":4.5,
+        "imgUrl":"./imgs/product4.jpeg",
+        "discount":"up to 20% discount",
+        "sale": false,
+        "outOfStock":true,
+        "tag":false
+
+    },
+    {
+        "id":5,
+        "name":"Jeans",
+        "price":600,
+        "rating":4.6,
+        "imgUrl":"./imgs/product5.jpeg",
+        "discount":"up to 10% discount",
+        "sale": false,
+        "outOfStock":false,
+        "tag":true
+    },
+    {
+        "id":6,
+        "name":"Saree",
+        "price":800,
+        "rating":4.9,
+        "imgUrl":"./imgs/product6.jpeg",
+        "discount":"up to 30% discount",
+        "sale": false,
+        "outOfStock":false,
+        "tag":false
+    },
+    {
+        "id":7,
+        "name":"Frock",
+        "price":500,
+        "rating":4.5,
+        "imgUrl":"./imgs/product7.jpeg",
+        "discount":"up to 20% discount",
+        "sale": false,
+        "outOfStock":false,
+        "tag":true
+    },
+    {
+        "id":8,
+        "name":"Jeans",
+        "price":600,
+        "rating":4.6,
+        "imgUrl":"./imgs/product8.jpeg",
+        "discount":"up to 10% discount",
+        "sale": false,
+        "outOfStock":false,
+        "tag":false
+    },
+    {
+        "id":9,
+        "name":"Saree",
+        "price":800,
+        "rating":4.9,
+        "imgUrl":"./imgs/product9.jpeg",
+        "discount":"up to 30% discount",
+        "sale": false,
+        "outOfStock":true,
+        "tag":false
+    },
+    {
+        "id":10,
+        "name":"Frock",
+        "price":500,
+        "rating":4.5,
+        "imgUrl":"./imgs/product10.jpeg",
+        "discount":"up to 20% discount",
+        "sale": false,
+        "outOfStock":false,
+        "tag":true
+    },
+    {
+        "id":11,
+        "name":"Jeans",
+        "price":600,
+        "rating":4.6,
+        "imgUrl":"./imgs/product11.jpeg",
+        "discount":"up to 10% discount",
+        "sale": false,
+        "outOfStock":false,
+        "tag":false
+    }
+
+]
+
+
+
+
