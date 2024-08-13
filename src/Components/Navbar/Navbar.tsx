@@ -5,7 +5,7 @@ import logo from '../Assets/logo.png'
 
 import './Navbar.css'
 
-const Navbar = () =>{
+const Navbar = ({size} : {size:number}) =>{
 
     return(
         <div className="navbar">
@@ -20,6 +20,9 @@ const Navbar = () =>{
 
             <div className="nav-login-cart">
                 <PiBagBold id="cart-icon"/>
+                <div className="nav-cart-count">
+                    {size}
+                </div>
                 
                 <button>Login</button>
             </div>

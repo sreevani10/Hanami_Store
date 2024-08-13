@@ -6,7 +6,7 @@
         "price":500,
         "rating":4.5,
         "imgUrl":"./imgs/product1.jpeg",
-        "discount":"up to 20% discount",
+        "discount":"20% discount",
         "sale": true,
         "outOfStock":false,
         "tag":true
@@ -17,7 +17,7 @@
         "price":600,
         "rating":4.6,
         "imgUrl":"./imgs/product2.jpeg",
-        "discount":"up to 10% discount",
+        "discount":"10% discount",
         "sale": true,
         "outOfStock":false,
         "tag":false
@@ -28,14 +28,14 @@
         "price":800,
         "rating":4.9,
         "imgUrl":"./imgs/product3.jpeg",
-        "discount":"up to 30% discount",
+        "discount":"30% discount",
         "sale": true,
         "outOfStock":false,
         "tag":false
     },
     {
         "id":4,
-        "name":"Frock",
+        "name":"Shirt",
         "price":500,
         "rating":4.5,
         "imgUrl":"./imgs/product4.jpeg",
@@ -47,7 +47,7 @@
     },
     {
         "id":5,
-        "name":"Jeans",
+        "name":"Shirt",
         "price":600,
         "rating":4.6,
         "imgUrl":"./imgs/product5.jpeg",
@@ -58,7 +58,7 @@
     },
     {
         "id":6,
-        "name":"Saree",
+        "name":"Skirt",
         "price":800,
         "rating":4.9,
         "imgUrl":"./imgs/product6.jpeg",
@@ -69,7 +69,7 @@
     },
     {
         "id":7,
-        "name":"Frock",
+        "name":"Skirt",
         "price":500,
         "rating":4.5,
         "imgUrl":"./imgs/product7.jpeg",
@@ -80,7 +80,7 @@
     },
     {
         "id":8,
-        "name":"Jeans",
+        "name":"Blue Lehenga",
         "price":600,
         "rating":4.6,
         "imgUrl":"./imgs/product8.jpeg",
@@ -91,7 +91,7 @@
     },
     {
         "id":9,
-        "name":"Saree",
+        "name":"Lehenga",
         "price":800,
         "rating":4.9,
         "imgUrl":"./imgs/product9.jpeg",
@@ -102,22 +102,22 @@
     },
     {
         "id":10,
-        "name":"Frock",
+        "name":"Purple Lehenga",
         "price":500,
         "rating":4.5,
         "imgUrl":"./imgs/product10.jpeg",
-        "discount":"up to 20% discount",
+        "discount":"20%",
         "sale": false,
         "outOfStock":false,
         "tag":true
     },
     {
         "id":11,
-        "name":"Jeans",
+        "name":"Crop Top",
         "price":600,
         "rating":4.6,
         "imgUrl":"./imgs/product11.jpeg",
-        "discount":"up to 10% discount",
+        "discount":"10%",
         "sale": false,
         "outOfStock":false,
         "tag":false
