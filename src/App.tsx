@@ -6,26 +6,28 @@ import { ToastContainer } from 'react-toastify';
 
 
 function App() {
-    
-  
-  const [cart, setCart] = useState<boolean[]>([]);
+   
+  // const [cart, setCart] = useState<boolean[]>([]);
 
-  const handleIncrement = (id: number) => {
-    if (!cart[id]) {
-      setCart((prevCart) => ({ ...prevCart, [id]: true }));
-    }
-  };
+  // const handleIncrement = (id: number) => {
+  //   if (!cart[id]) {
+  //     setCart((cart) => ({ ...cart, [id]: true }));
+  //   }
+  // };
+  
+  
   
 
-  
 
   return (
     <div>
       <ToastContainer/>
-      <Navbar size={Object.keys(cart).length}/>
+      {/* <Navbar size={Object.keys(cart).length}/> */}
      
       {/* <SalesSection/> */}
-      <Products handleIncrement={handleIncrement} />
+      {/* <Products  handleIncrement={handleIncrement}/> */}
+      <Products/>
+
       
       
     

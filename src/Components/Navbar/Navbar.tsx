@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { IoSearch } from "react-icons/io5";
 import { PiBagBold } from "react-icons/pi";
 import logo from '../Assets/logo.png'
 
 import './Navbar.css'
 
-const Navbar = ({size} : {size:number}) =>{
+const Navbar = ({size, search} : {size:number, search:(value:string)=>void}) =>{
+
+    const[value,setValue] = useState("");
+    function searchHandler(click: any){
+             const newValue=click.target.value 
+             setValue(newValue)
+             search(newValue);
+    }
 
     return(
         <div className="navbar">
@@ -14,7 +21,7 @@ const Navbar = ({size} : {size:number}) =>{
                 <p className="shopname">Hanami</p>
             </div>
             <div className="input-wrapper">
-                <input type = "text" placeholder="Search here"/>
+                <input type = "text" placeholder="Search here" onChange={(click)=>searchHandler(click)}/>
                 <IoSearch id="search-icon"/>
             </div>
 

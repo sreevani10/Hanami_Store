@@ -12,9 +12,9 @@ import Products from '../Products/Products';
 import { JSX } from 'react/jsx-runtime';
 
 
-type ProductProps ={
+export type ProductProps ={
     
-   id:number,
+    id?:number,
     imgUrl:string,
     name : string,
     price : number,
@@ -29,7 +29,7 @@ type ProductProps ={
 
 };
 
-export default function Product({imgUrl,name,price,rating,discount,sale,outOfStock,tag,handleIncrement}:ProductProps){
+export default function Product({imgUrl,name,price,rating,discount,sale,outOfStock,tag, handleIncrement}:ProductProps ){
     
 
     const [color,setColor] = useState("black")
