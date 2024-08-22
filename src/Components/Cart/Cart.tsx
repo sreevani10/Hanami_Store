@@ -8,12 +8,12 @@ import "react-toastify/dist/ReactToastify.css";
 import './Cart.css'
 import PaymentCard from '../PaymentCard/PaymentCard';
 const Cart = () => {
-    const {cart,setCart} = useContext(CartContext);
+    const {cart,setCart,setCartCount} = useContext(CartContext);
     
     const handleIncrement = (id: number) => {
         const updatedCart = cart.map((product) => {
           if ((product.id) === id) {
-            return { ...product, quantity: (product.quantity || 1) + 1 };
+            return { ...product, quantity: (product.quantity) + 1 };
           }
           return product;
         });
@@ -44,7 +44,7 @@ const Cart = () => {
                   ]
                 });
               } else {
-            return { ...product, quantity: (product.quantity || 1) - 1 };
+            return { ...product, quantity: product.quantity - 1 };
           }
         }
           return product;
@@ -81,6 +81,7 @@ const Cart = () => {
 
     return (
         <>
+        {cart.length === 0 ?  <p className="cart-tag">Your cart feels very light!</p> : 
         <div className="cart-payment">
         <div className="total-card">
         <div className="product-view">
@@ -93,7 +94,7 @@ const Cart = () => {
                     <div className="size-quantity">
                     <button className="product-size">{product.size}</button>
                     <button className="button-plus" onClick={()=>handleDecrement((product.id))}>-</button>
-                    {product.quantity || 1} 
+                    {product.quantity} 
                     <button className="button-minus" onClick={()=>handleIncrement((product.id))}>+</button>
                     </div>
                     <p className="product-price">Rs.{product.price}</p>
@@ -107,8 +108,10 @@ const Cart = () => {
         </div>
                 
         </div>
-        <PaymentCard cart={cart} setCart={setCart} />
+        <PaymentCard cart={cart} setCart={setCart} setCartCount={setCartCount} />
         </div>
+
+        } 
         </>
     );
 }

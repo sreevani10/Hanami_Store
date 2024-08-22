@@ -60,7 +60,7 @@ const Products = ()  => {
             <div className="products">
                
             {items.map((product)=>{
-                return <Product id={product.id} imgUrl={product.imgUrl} name={product.name} price={product.price} rating={product.rating} sale={false} outOfStock={product.outOfStock} tag={product.tag}/>
+                return <Product id={product.id} imgUrl={product.imgUrl} name={product.name} price={product.price} rating={product.rating} sale={false} outOfStock={product.outOfStock} tag={product.tag} quantity={product.quantity}/>
                 
             })}
             

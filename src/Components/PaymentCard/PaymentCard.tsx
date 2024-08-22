@@ -8,31 +8,27 @@ import './PaymentCard.css'
 
   
 
-const PaymentCard = ({ cart, setCart }:{cart : TCart[], setCart : (cart:TCart[])=> void}) => {
+const PaymentCard = ({ cart, setCart ,setCartCount}:{cart : TCart[], setCart : (cart:TCart[])=> void, setCartCount:(count:number)=> void}) => {
   const handleOrderNow = () => {
-    if (cart.length === 0) {
-      toast.info("Your cart feels very light! 🥺");
-    } else {
-      let total = 0;
-      let discount = 0;
-      cart.forEach((product) => {
-        total += product.price *( product.quantity ||1);
-        discount += product.discount ? product.price * (product.quantity || 1) * product.discount / 100 : 0;
+      const finalTotal = total;
+      toast.success(`Thanks for shopping!! Please visit again. Total amount: ₹${finalTotal}`);
+      setTimeout(()=> {  setCart([]) ; setCartCount(0)}, 2000);
 
-      });
-      toast.success(`Thanks for shopping!! Please visit again. Total amount: ₹${total}`);
-      setCart([]);
-    }
+    
   };
 
   let price = 0;
   let discount = 0;
   let total = 0;
   cart.forEach((product) => {
-    price += product.price * (product.quantity || 1);
-    discount += product.discount ? product.price * (product.quantity || 1) * product.discount / 100 : 0;
-    total += product.price * (product.quantity || 1) - discount;
+    price += product.price * (product.quantity);
+    if(product.discount){
+      discount += ((product.price * product.discount) / 100);
+    }
+    total += (product.price * (product.quantity)) - (discount*product.quantity);
   });
+
+  
 
 
   return (
@@ -60,7 +56,7 @@ const PaymentCard = ({ cart, setCart }:{cart : TCart[], setCart : (cart:TCart[])
                  </h5>
                  <div className="price-order">
                  <span>
-                        <h4>₹{price}</h4>
+                        <h4>₹{total}</h4>
                         <p>view price details</p>
                         <button onClick={handleOrderNow}>Order Now</button></span>
 

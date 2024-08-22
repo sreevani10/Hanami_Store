@@ -26,17 +26,17 @@ export type ProductProps ={
     sale:boolean,
     outOfStock?: boolean,
     tag?:boolean,
-
+    quantity:number
     // handleIncrement: () => void
 };
 
-export default function Product({id,imgUrl,name,price,rating,discount,sale,outOfStock,tag}:ProductProps ){
+export default function Product({id,imgUrl,name,price,rating,discount,sale,outOfStock,tag,quantity}:ProductProps ){
 
     const { wishlist, addWishlist, removeWishlist } = useContext(WishlistContext);
     const { cart, setCart, cartCount, setCartCount } = useContext(CartContext);
     const [isInCart, setIsInCart] = useState(false);
     const handleIncrement = () => {
-        const product = { id, imgUrl, name, price, rating,sale};
+        const product = { id, imgUrl, name, price, rating,sale, quantity,discount};
         setCartCount(cartCount + 1);
         if(product)setCart([...cart, product]);
         setIsInCart(true);

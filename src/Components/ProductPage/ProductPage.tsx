@@ -18,10 +18,8 @@ const ProductPage = () => {
 
   const handleIncrement = (id:number |undefined) => {
     const product = SaleItems.find((product) => (product.id) === id);
-
-    // const product = { id, imgUrl, name, price, rating };
     if(product){
-      const productWithSize = { ...product, size: selectedSize };
+      const productWithSize = { ...product, size: selectedSize, quantity:1 };
     
     setCartCount(cartCount + 1);
     if(!cart.find((item)=>item.id==id))

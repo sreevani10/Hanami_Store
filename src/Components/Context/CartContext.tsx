@@ -2,7 +2,7 @@ import { Children, createContext, useState } from "react";
 import { ProductProps } from "../Sales/Product";
 
 type TCart = {
-    quantity?:number,
+    quantity:number,
     id:number,
     imgUrl:string,
     name : string,

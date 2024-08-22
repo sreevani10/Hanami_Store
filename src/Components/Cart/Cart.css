@@ -99,3 +99,11 @@
     justify-content:space-evenly;
     
 }
+.cart-tag{
+  color: rgb(35, 113, 87);
+  font-weight: 600;
+  margin:18%;
+  margin-left:40%;
+  margin-top:25%;
+
+}
