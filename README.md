@@ -1,47 +1,40 @@
-# Getting Started with Create React App
+# E-Commerce Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Individual Product Page
 
-## Available Scripts
+### Navigation
+- Clicking on a product card from the Home page navigates to the product's individual page within the same tab.
 
-In the project directory, you can run:
+### Size Selection
+- For in-stock products, users can select sizes from XS to XXL.
+- Sizes are disabled for out-of-stock products.
 
-### `npm start`
+### Wishlist
+- Users can add or remove products from their wishlist.
+- Wishlist status persists across the Home page and individual product pages.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Add to Cart
+- Clicking "Add to Cart" adds the product to the cart or increases the quantity if already present.
+- The button transforms into "Go to Cart" after adding the product.
+- Clicking "Go to Cart" navigates to the Cart page.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Cart Page
 
-### `npm test`
+### Navigation
+- Clicking the cart/bag icon in the Navbar takes users to the Cart page.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Remove from Cart
+- Clicking "Remove from Cart" triggers a confirmation pop-up.
+- The pop-up asks: "Are you sure you want to remove this item from the cart?" with Yes and No options.
+- Clicking Yes removes the item from the cart, while No keeps the item with its current quantity.
 
-### `npm run build`
+## Development Notes
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### How to Run
+1. Clone the repository: `git clone https://github.com/username/repository.git`
+2. Navigate to the project directory: `cd repository`
+3. Install dependencies: `npm install` or `yarn install`
+4. Start the development server: `npm start` or `yarn start`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-# Hanami_Store

@@ -1,11 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext,useState } from "react";
+import { CartContext } from "../Context/CartContext";
 import { IoSearch } from "react-icons/io5";
 import { PiBagBold } from "react-icons/pi";
 import logo from '../Assets/logo.png'
-
+import { useNavigate } from "react-router-dom";
 import './Navbar.css'
 
-const Navbar = ({size, search} : {size:number, search:(value:string)=>void}) =>{
+
+const Navbar = ({ search} : { search:(value:string)=>void}) =>{
+
+    const {cartCount} = useContext(CartContext);
+   
+    const navigate = useNavigate();
+
 
     const[value,setValue] = useState("");
     function searchHandler(click: any){
@@ -13,7 +20,6 @@ const Navbar = ({size, search} : {size:number, search:(value:string)=>void}) =>{
              setValue(newValue)
              search(newValue);
     }
-
     return(
         <div className="navbar">
             <div className="nav-logo">
@@ -24,23 +30,15 @@ const Navbar = ({size, search} : {size:number, search:(value:string)=>void}) =>{
                 <input type = "text" placeholder="Search here" onChange={(click)=>searchHandler(click)}/>
                 <IoSearch id="search-icon"/>
             </div>
-
-            <div className="nav-login-cart">
+            <div onClick={() => navigate('/cart')}>
+                <div className="nav-login-cart">
                 <PiBagBold id="cart-icon"/>
-                <div className="nav-cart-count">
-                    {size}
+                <div className="nav-cart-count">{cartCount}</div>
                 </div>
-                
-                <button>Login</button>
             </div>
-            
-           
-
-            
-            
+            <button className="login">Login</button>    
         </div>
 
     )
 }
-
 export default Navbar
