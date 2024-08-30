@@ -1,0 +1,48 @@
+.payment-body{
+    display:flex;
+    flex-direction: column;
+    box-shadow: 1px 1px 5px rgb(122, 124, 124);
+    border-radius: 8px;
+    background-color:  rgb(156, 223, 196);
+    width:18%;
+    height: fit-content;
+    padding-left:3%;
+    padding-right: 5%;
+    padding-bottom: 2%;
+    margin-top: 4%;
+}
+.payment-body h1 {
+    color: rgb(1, 30, 20);
+}
+
+hr {
+    width:100%;
+    size:2;
+}
+
+.payment-details {
+    display: flex;
+    justify-content: space-between;
+    gap:20%;
+    font-size:14px;
+}
+
+.text-highlight {
+    color:rgb(1, 30, 20);
+    font-weight: bold;
+}
+
+.payment-body h5 {
+    color: rgb(1, 30, 20);
+    font-size: 15px;
+}
+
+
+.price-order button {
+    background: rgb(1, 30, 20);
+    color: white;
+    font-weight: bold;
+    border:none;
+    border-radius: 8px;
+
+}

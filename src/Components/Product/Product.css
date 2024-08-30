@@ -40,31 +40,28 @@
     opacity: 0.6;
 }
  .notify{
-    background-color: green;
-    color: white;
-    border: none;
-    margin-left: 30%;
+   
+        margin-top:40px;
+        width:80px;
+        height: 30px;
+        font-size: 10px;
+        font-weight: 600;
+        color: white;
+        background: rgb(8, 104, 69);
+        margin-left:50px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+
 
  }
- /* .redHeart{
-    background-color: white;
-    color: red;
-    border: none;
-    margin-left: 38%;
-    
- }
- .wishlist{
-    background-color: white;
-    color: black;
-    border: none;
-    margin-left: 38%;
-    
- } */
+ 
+ 
  .price{
     padding-left: 20px;
  }
  .name{
-   margin-left: 30%;
+   margin-left: 18%;
  }
 
 
@@ -83,7 +80,22 @@
     
 }
 
-.buttonAdjust{
-    display: flex;
-    margin-right: 20px;;
+.discount{
+    text-align: center;
+    gap:10px;
+}
+.cart{
+      
+        margin-top:30px;
+        width:80px;
+        height: 30px;
+        font-size: 10px;
+        font-weight: 600;
+        color: white;
+        background: rgb(8, 104, 69);
+        margin-left:40px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    
 }

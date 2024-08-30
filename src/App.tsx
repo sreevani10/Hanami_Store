@@ -1,31 +1,36 @@
-import React, { useState } from 'react';
+
 import './App.css';
-import Navbar from './Components/Navbar/Navbar';
-// import SalesSection from './Components/SalesSection/SalesSection';
-import Products from './Components/Products/Products'
+import { WishlistProvider } from './Context/WishlistContext';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Cart from './components/Cart/Cart';
+import Products from './components/Products/Products';
+import ProductPage from './components/ProductPage/ProductPage';
 import { ToastContainer } from 'react-toastify';
+import { CartProvider } from './Context/CartContext';
+import { SearchProvider } from './Context/SearchContext';
+import { ProductDataContextProvider } from './Context/ProductsDataContext';
+
 
 
 function App() {
-  const [show,setShow] = useState(true);
-  const [cart,setCart] = useState(0);
-
-  function handleIncrement(){
-    // increases count
-    setCart(cart+1);
-  }
-
   return (
     <div>
+      <ProductDataContextProvider>
       <ToastContainer/>
-      <Navbar size={cart}/>
-     
-      {/* <SalesSection/> */}
-      <Products />
-      
-      
-    
-     
+      <SearchProvider>
+      <CartProvider>
+      <WishlistProvider>
+      <BrowserRouter>
+      <Routes>
+         <Route path="/" element={<Products />} />
+        <Route path="/products/:id" element={<ProductPage />} />
+        <Route path="/cart" element={<Cart />} />
+    </Routes>
+    </BrowserRouter>
+    </WishlistProvider>  
+    </CartProvider> 
+    </SearchProvider>
+    </ProductDataContextProvider>
     </div>
   );
 }

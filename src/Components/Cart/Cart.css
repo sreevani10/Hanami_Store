@@ -1,0 +1,109 @@
+
+.card{
+    display: flex;
+    gap:50px;
+    border: solid;
+    background: rgb(156, 223, 196);
+    padding: 3%;
+    
+    
+
+}
+.product-view {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5%;
+    
+    outline: none;
+    width: 100%;
+    padding:2%;
+    gap:30px;
+  } 
+÷
+.product-image {
+  width: 40%;
+  height: 20%;
+  margin-right: 20px;
+  
+}
+
+
+
+.product-name {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.product-price {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  padding-left: 50px;
+}
+
+/* .product-size {
+  font-size: 10px;
+  margin-bottom: 10px;
+  color: black;
+} */
+
+.product-quantity {
+  font-size: 16px;
+  margin-bottom: 10px;
+} 
+
+.product-size{
+    border: none;
+    width:40px;
+    height: 30px;
+    margin-right: 20px;
+    border-radius: 5px;
+    
+  
+}
+.button-plus{
+    border: none;
+    width:40px;
+    height: 30px;
+    border-radius: 5px;
+    margin-right: 10px;
+
+}
+.button-minus{
+    border: none;
+    width:40px;
+    height: 30px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.size-quantity{
+    display: flex;
+
+}
+.remove-cart{
+    background: rgb(1, 30, 20);
+    color: white;
+    border: none;
+    height: 15%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.cart-payment{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    
+}
+.cart-tag{
+  color: rgb(35, 113, 87);
+  font-weight: 600;
+  margin:18%;
+  margin-left:40%;
+  margin-top:25%;
+
+}

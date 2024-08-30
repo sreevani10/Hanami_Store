@@ -1,33 +1,38 @@
-import React from "react";
+import React, { useContext,useState } from "react";
 import './Products.css'
 import SaleItems from "../../data/SaleItems.json"
-import Product from "../Sales/Product";
+import Product from "../Product/Product";
+import Navbar from "../Navbar/Navbar";
+import { ProductDataContext } from "../../Context/ProductsDataContext";
 
- 
-const Products = (cartCounter:any, handleIncrement:()=>{}) => {
-    
-    const sale = SaleItems.filter(products =>products.sale === true && products.outOfStock === false);
+
+
+
+const Products = ()  => {
+   
+    const sale = SaleItems.filter(products =>products.sale === true && products.outOfStock === false) ;
     const products = SaleItems.filter(item =>item.sale === false);
-   
-    const items=[...sale , ...products]
-   
+    const {saleitems, items, search} = useContext(ProductDataContext)
     return (
         <>
+         <Navbar search={search}/>
         <div>
             <h1 className="heading">Exclusive Sale</h1>
             <p className="tag">Get in on the trend with our curated selection of best-selling styles.</p>
+            {saleitems.length==0&&<div className="tag">No products found</div>}
             <div className="saleproducts">
-            {sale.map((product)=>{
+            {saleitems.map((product)=>{
                 return <Product {...product} />
             })}
             </div>
         </div>
         <div className="items" >
             <h1>Our Products</h1>
+            {items.length==0&&<div>No products found</div>}
             <div className="products">
                
             {items.map((product)=>{
-                return <Product imgUrl={product.imgUrl} name={product.name} price={product.price} rating={product.rating} sale={false} outOfStock={product.outOfStock} tag={product.tag}/>
+                return <Product id={product.id} imgUrl={product.imgUrl} name={product.name} price={product.price} rating={product.rating} sale={false} outOfStock={product.outOfStock} tag={product.tag} quantity={product.quantity}/>
                 
             })}
             
@@ -38,21 +43,3 @@ const Products = (cartCounter:any, handleIncrement:()=>{}) => {
 }
 
 export default Products;
-// const Products =()=>{
-//     const products = SaleItems.filter(item =>item.sale === false);
-//     console.log("products")
-//     console.log(products);
-//     return(
-//         <div className="items" >
-//             <h1>Our Products</h1>
-//             <div className="products">
-               
-//             {products.map((product)=>{
-//                 return <Product imgUrl={product.imgUrl} name={product.name} price={product.price} rating={product.rating} sale={false} outOfStock={product.outOfStock} tag={product.tag}/>
-//             })}
-            
-//             </div>
-//         </div>
-//     )
-// }
-// export default Products
