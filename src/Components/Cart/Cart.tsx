@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { CartContext } from "../Context/CartContext";
+import { CartContext } from "../../Context/CartContext";
 import { confirmAlert as showPopUp } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import { ToastContainer, toast } from "react-toastify";
@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "react-toastify/dist/ReactToastify.css";
 import './Cart.css'
 import PaymentCard from '../PaymentCard/PaymentCard';
+import Navbar from "../Navbar/Navbar";
 const Cart = () => {
     const {cart,setCart,setCartCount} = useContext(CartContext);
     
@@ -79,8 +80,11 @@ const Cart = () => {
     
 
 
+  
+
     return (
         <>
+       
         {cart.length === 0 ?  <p className="cart-tag">Your cart feels very light!</p> : 
         <div className="cart-payment">
         <div className="total-card">

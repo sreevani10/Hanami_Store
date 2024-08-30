@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter } from 'react-router-dom';
-import ProductPage from './Components/ProductPage/ProductPage'
+import ProductPage from './components/ProductPage/ProductPage'
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

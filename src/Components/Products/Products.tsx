@@ -1,9 +1,8 @@
 import React, { useContext,useState } from "react";
-import { CartContext } from "../Context/CartContext";
+import { CartContext } from "../../Context/CartContext";
 import './Products.css'
 import SaleItems from "../../data/SaleItems.json"
-import { ProductProps } from "../Sales/Product";
-import Product from "../Sales/Product";
+import Product from "../Product/Product";
 import Navbar from "../Navbar/Navbar";
 
 

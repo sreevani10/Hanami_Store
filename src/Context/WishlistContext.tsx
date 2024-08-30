@@ -2,13 +2,13 @@ import React, { createContext, useState } from 'react';
 
 
 
-type WishlistContextType = {
+type TWishlistedProducts = {
     wishlist: number[];
     addWishlist: (id: number) => void;
     removeWishlist: (id: number) => void;
   }
   
-  const WishlistContext = createContext<WishlistContextType>({wishlist:[],addWishlist:()=>{}, removeWishlist:()=>{}});
+  const WishlistContext = createContext<TWishlistedProducts>({wishlist:[],addWishlist:()=>{}, removeWishlist:()=>{}});
   
 
 const WishlistProvider = ({ children }:any) => {

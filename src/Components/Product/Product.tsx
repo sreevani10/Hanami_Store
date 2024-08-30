@@ -2,16 +2,13 @@
 
 import { useState } from 'react';
 import React, { useContext } from 'react';
-import { WishlistContext } from '../Context/WishlistContext';
+import { WishlistContext } from '../../Context/WishlistContext';
 import './Product.css'
-import { PiBagBold } from "react-icons/pi";
 import { RiHeart3Fill } from "react-icons/ri";
 import { toast } from "react-toastify";
-import App from '../../App';
 import "react-toastify/dist/ReactToastify.css";
-import Products from '../Products/Products';
 import { useNavigate , useParams } from 'react-router-dom';
-import { CartContext } from '../Context/CartContext';
+import { CartContext } from '../../Context/CartContext';
 
 
 export type ProductProps ={
@@ -27,7 +24,7 @@ export type ProductProps ={
     outOfStock?: boolean,
     tag?:boolean,
     quantity:number
-    // handleIncrement: () => void
+
 };
 
 export default function Product({id,imgUrl,name,price,rating,discount,sale,outOfStock,tag,quantity}:ProductProps ){

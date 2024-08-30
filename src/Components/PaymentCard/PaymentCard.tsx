@@ -1,6 +1,6 @@
-import React from 'react';
+
 import { toast } from 'react-toastify';
-import { TCart } from '../Context/CartContext';
+import { TCart } from '../../Context/CartContext';
 import './PaymentCard.css'
 
 

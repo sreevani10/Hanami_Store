@@ -1,15 +1,15 @@
 import React, { useContext, useState } from 'react';
-import { CartContext } from '../Context/CartContext';
+import { CartContext } from '../../Context/CartContext';
 
 import SaleItems from "../../data/SaleItems.json"
 import { useParams } from 'react-router-dom';
-import Product from '../Sales/Product';
+import Product from '../Product/Product';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
 import './ProductPage.css'
 import { RiHeart3Fill } from 'react-icons/ri';
 import { toast, ToastContainer } from 'react-toastify';
-import { WishlistContext } from '../Context/WishlistContext';
+import { WishlistContext } from '../../Context/WishlistContext';
 
 const ProductPage = () => {
 
@@ -46,7 +46,7 @@ const ProductPage = () => {
   
 
 
-    const handleSizeClick = (size:any) => {
+    const handleSizeClick = (size:string) => {
       setSelectedSize(size);
     };
     
