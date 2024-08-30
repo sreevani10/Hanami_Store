@@ -1,6 +1,6 @@
 
 import { toast } from 'react-toastify';
-import { TCart } from '../../Context/CartContext';
+import { TCartProduct } from '../../Context/CartContext';
 import './PaymentCard.css'
 
 
@@ -8,7 +8,7 @@ import './PaymentCard.css'
 
   
 
-const PaymentCard = ({ cart, setCart ,setCartCount}:{cart : TCart[], setCart : (cart:TCart[])=> void, setCartCount:(count:number)=> void}) => {
+const PaymentCard = ({ cart, setCart ,setCartCount}:{cart : TCartProduct[], setCart : (cart:TCartProduct[])=> void, setCartCount:(count:number)=> void}) => {
   const handleOrderNow = () => {
       const finalTotal = total;
       toast.success(`Thanks for shopping!! Please visit again. Total amount: ₹${finalTotal}`);
