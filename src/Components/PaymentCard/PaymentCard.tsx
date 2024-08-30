@@ -50,8 +50,6 @@ const PaymentCard = ({ cart, setCart ,setCartCount}:{cart : TCartProduct[], setC
                         <button onClick={handleOrderNow}>Order Now</button></span>
 
                  </div>
-
-      
     </div>
   );
 };

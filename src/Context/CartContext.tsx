@@ -1,5 +1,4 @@
 import { Children, createContext, useState } from "react";
-import { ProductProps } from "../components/Product/Product";
 
 type TCartProduct = {
     quantity:number,
@@ -22,7 +21,6 @@ interface Cart {
 }
 
 const CartContext = createContext<Cart>({cart: [],setCart: () => {},cartCount: 0, setCartCount: () => {}, });
-
 const CartProvider = ({children}:any) => {
     const [cartCount, setCartCount] = useState(0);
     const [cart,setCart] = useState<TCartProduct[]>([]);

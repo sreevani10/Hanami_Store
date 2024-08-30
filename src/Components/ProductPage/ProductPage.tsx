@@ -8,10 +8,15 @@ import './ProductPage.css'
 import { RiHeart3Fill } from 'react-icons/ri';
 import { toast, ToastContainer } from 'react-toastify';
 import { WishlistContext } from '../../Context/WishlistContext';
+import { SearchContext } from '../../Context/SearchContext';
+import { ProductDataContext } from '../../Context/ProductsDataContext';
 
 const ProductPage = () => {
   const { cart,setCart,cartCount, setCartCount} = useContext(CartContext);
-  const [selectedSize, setSelectedSize] = useState('M')
+  const [selectedSize, setSelectedSize] = useState('M');
+  const {search} = useContext(ProductDataContext)
+
+
   const handleIncrement = (id:number |undefined) => {
     const product = SaleItems.find((product) => (product.id) === id);
     if(product){
@@ -24,7 +29,6 @@ const ProductPage = () => {
     setIsInCart(true); 
   };
 }
-
   const navigate = useNavigate();
   const [isInCart, setIsInCart] = useState(false);
   const { wishlist, addWishlist, removeWishlist } = useContext(WishlistContext);
@@ -52,21 +56,17 @@ const notify=(event:any)=>{
     return (
         <div>
           <ToastContainer/>
-            <Navbar search={function (value: string): void {
-                throw new Error('Function not implemented.');
-            } } />
+            <Navbar search={search}/>
             <div className="view">
             <img className="img" src={product?.imgUrl} alt="hello" />
             <div className="details-section">
             <h1>{product?.name}</h1>
-        
             <div className="price-rating">
             <p>Rs.{product?.price} </p>
             <p>|</p>
             <p>{product?.rating}    ⭐</p>
             </div>
             {product?.discount&&<p className="discount">{product?.discount}</p>}
-            
             <div className='button'>
             {product?.outOfStock ? (
               <p className='stock-tag'>This item is currently out of stock</p>
@@ -87,13 +87,6 @@ const notify=(event:any)=>{
             </div>
             </div>
             </div>
-
-            
-
-            
-            
-           
-      
     </div>
       );
 

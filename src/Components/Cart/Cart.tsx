@@ -7,9 +7,12 @@ import "react-toastify/dist/ReactToastify.css";
 import "react-toastify/dist/ReactToastify.css";
 import './Cart.css'
 import PaymentCard from '../PaymentCard/PaymentCard';
+import Navbar from "../Navbar/Navbar";
+import { ProductDataContext } from "../../Context/ProductsDataContext";
 
 const Cart = () => {
     const {cart,setCart,setCartCount} = useContext(CartContext);
+    const {search} = useContext(ProductDataContext)
     const handleIncrement = (id: number) => {
         const updatedCart = cart.map((product) => {
           if ((product.id) === id) {
@@ -75,6 +78,7 @@ const Cart = () => {
 };
     return (
         <>
+        <Navbar search={search }/>
         {cart.length === 0 ?  <p className="cart-tag">Your cart feels very light!</p> : 
         <div className="cart-payment">
         <div className="total-card">

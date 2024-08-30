@@ -7,13 +7,17 @@ import Products from './components/Products/Products';
 import ProductPage from './components/ProductPage/ProductPage';
 import { ToastContainer } from 'react-toastify';
 import { CartProvider } from './Context/CartContext';
+import { SearchProvider } from './Context/SearchContext';
+import { ProductDataContextProvider } from './Context/ProductsDataContext';
 
 
 
 function App() {
   return (
     <div>
+      <ProductDataContextProvider>
       <ToastContainer/>
+      <SearchProvider>
       <CartProvider>
       <WishlistProvider>
       <BrowserRouter>
@@ -25,6 +29,8 @@ function App() {
     </BrowserRouter>
     </WishlistProvider>  
     </CartProvider> 
+    </SearchProvider>
+    </ProductDataContextProvider>
     </div>
   );
 }

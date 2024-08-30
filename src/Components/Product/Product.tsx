@@ -1,7 +1,5 @@
 
-
-import { useState } from 'react';
-import React, { useContext } from 'react';
+import React, {useState, useContext } from 'react';
 import { WishlistContext } from '../../Context/WishlistContext';
 import './Product.css'
 import { RiHeart3Fill } from "react-icons/ri";
@@ -10,10 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useNavigate , useParams } from 'react-router-dom';
 import { CartContext } from '../../Context/CartContext';
 
-
 export type ProductProps ={
-    
- 
     id:number,
     imgUrl:string,
     name : string,
@@ -24,11 +19,8 @@ export type ProductProps ={
     outOfStock?: boolean,
     tag?:boolean,
     quantity:number
-
 };
-
 export default function Product({id,imgUrl,name,price,rating,discount,sale,outOfStock,tag,quantity}:ProductProps ){
-
     const { wishlist, addWishlist, removeWishlist } = useContext(WishlistContext);
     const { cart, setCart, cartCount, setCartCount } = useContext(CartContext);
     const [isInCart, setIsInCart] = useState(false);
@@ -38,23 +30,18 @@ export default function Product({id,imgUrl,name,price,rating,discount,sale,outOf
         if(product)setCart([...cart, product]);
         setIsInCart(true);
       };
-
-
   const handleWishlist = () => {
     if (wishlist.includes(id)) {
       removeWishlist(id);
     } else {
       addWishlist(id);
     }}
-
     const navigate = useNavigate();
     const params = useParams();
-
     const notify=(event:any)=>{
         event.currentTarget.disabled=true;
         toast("out of stock")    
     }
-    
     return(
         <div className={outOfStock? "overlay item" : "item"} >
             <div className="badge">
@@ -80,9 +67,7 @@ export default function Product({id,imgUrl,name,price,rating,discount,sale,outOf
             <p className="sale">{sale}</p>
             </div>
         </div>
-    
     )
-
 };
 
 
