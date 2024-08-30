@@ -9,9 +9,10 @@ import { ProductDataContext } from "../../Context/ProductsDataContext";
 
 
 const Products = ()  => {
+   
     const sale = SaleItems.filter(products =>products.sale === true && products.outOfStock === false) ;
     const products = SaleItems.filter(item =>item.sale === false);
-    const {saleitems, items, setItems, setSaleItems, search} = useContext(ProductDataContext)
+    const {saleitems, items, search} = useContext(ProductDataContext)
     return (
         <>
          <Navbar search={search}/>

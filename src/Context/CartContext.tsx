@@ -11,7 +11,7 @@ type TCartProduct = {
     sale:boolean,
     outOfStock?: boolean,
     tag?:boolean,
-    size?:string,
+    size:string,
 }
 interface Cart {
     cart:TCartProduct[],

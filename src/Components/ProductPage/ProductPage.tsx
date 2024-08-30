@@ -8,23 +8,30 @@ import './ProductPage.css'
 import { RiHeart3Fill } from 'react-icons/ri';
 import { toast, ToastContainer } from 'react-toastify';
 import { WishlistContext } from '../../Context/WishlistContext';
-import { SearchContext } from '../../Context/SearchContext';
 import { ProductDataContext } from '../../Context/ProductsDataContext';
 
 const ProductPage = () => {
   const { cart,setCart,cartCount, setCartCount} = useContext(CartContext);
   const [selectedSize, setSelectedSize] = useState('M');
   const {search} = useContext(ProductDataContext)
-
-
+  
   const handleIncrement = (id:number |undefined) => {
     const product = SaleItems.find((product) => (product.id) === id);
     if(product){
       const productWithSize = { ...product, size: selectedSize, quantity:1 };
     setCartCount(cartCount + 1);
-    if(!cart.find((item)=>item.id==id))
+    if(!cart.find((item)=>(item.id==id && item.size===selectedSize)))
     {
       if(product)setCart([...cart, productWithSize]);
+    }
+    if(cart.find(item=>(item.id==id && item.size===selectedSize))){
+      const data:any[]= cart.map((item)=>{
+        if(item.id==id && item.size===selectedSize){
+            return {...item, quantity:item.quantity+1}
+        }
+        return item;
+      })
+       setCart(data)
     }
     setIsInCart(true); 
   };

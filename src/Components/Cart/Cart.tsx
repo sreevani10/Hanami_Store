@@ -11,7 +11,7 @@ import Navbar from "../Navbar/Navbar";
 import { ProductDataContext } from "../../Context/ProductsDataContext";
 
 const Cart = () => {
-    const {cart,setCart,setCartCount} = useContext(CartContext);
+    const {cart,setCart,setCartCount, cartCount} = useContext(CartContext);
     const {search} = useContext(ProductDataContext)
     const handleIncrement = (id: number) => {
         const updatedCart = cart.map((product) => {
@@ -35,6 +35,8 @@ const Cart = () => {
                       onClick: () => {
                         const newCart = cart.filter((product) => (product.id) !== id);
                         setCart(newCart);
+                        console.log(cartCount);
+                        setCartCount(cartCount-1);
                       }
                     },
                     {
@@ -64,6 +66,8 @@ const Cart = () => {
                         const updatedCart = cart.filter((product) => (product.id) !== id);
                        setCart(updatedCart);
                         toast.success("Removed From Cart");
+                        setCartCount(cartCount-1);
+
                     }
                 },
                 {

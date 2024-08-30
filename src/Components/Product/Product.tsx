@@ -21,13 +21,14 @@ export type ProductProps ={
     quantity:number
 };
 export default function Product({id,imgUrl,name,price,rating,discount,sale,outOfStock,tag,quantity}:ProductProps ){
+  const [selectedSize, setSelectedSize] = useState('M');
     const { wishlist, addWishlist, removeWishlist } = useContext(WishlistContext);
     const { cart, setCart, cartCount, setCartCount } = useContext(CartContext);
     const [isInCart, setIsInCart] = useState(false);
     const handleIncrement = () => {
         const product = { id, imgUrl, name, price, rating,sale, quantity,discount};
         setCartCount(cartCount + 1);
-        if(product)setCart([...cart, product]);
+        if(product)setCart([...cart, {...product, size:selectedSize}]);
         setIsInCart(true);
       };
   const handleWishlist = () => {
@@ -67,7 +68,9 @@ export default function Product({id,imgUrl,name,price,rating,discount,sale,outOf
             <p className="sale">{sale}</p>
             </div>
         </div>
+
     )
+
 };
 
 
