@@ -13,6 +13,15 @@ import { ProductDataContext } from '../../Context/ProductsDataContext';
 const ProductPage = () => {
   const { cart,setCart,cartCount, setCartCount} = useContext(CartContext);
   const [selectedSize, setSelectedSize] = useState('M');
+  const [buttonColors, setButtonColors] = useState({
+    XS: 'white',
+    S: 'white',
+    M: 'white',
+    L: 'white',
+    XL: 'white',
+    XXL: 'white',
+  });
+  
   const {search} = useContext(ProductDataContext)
   
   const handleIncrement = (id:number |undefined) => {
@@ -47,6 +56,10 @@ const ProductPage = () => {
     }}    
     const handleSizeClick = (size:string) => {
       setSelectedSize(size);
+      setButtonColors((prevColors) => ({
+        ...prevColors,
+        [size]: 'green',
+      }));
     };
   const { id } = useParams();
   if(!id){
@@ -79,12 +92,12 @@ const notify=(event:any)=>{
               <p className='stock-tag'>This item is currently out of stock</p>
             ) : (
               <>
-                <button className="btn" onClick={() => handleSizeClick('XS')}>XS</button>
-                <button className="btn" onClick={() => handleSizeClick('S')}>S</button>
-                <button className="btn" onClick={() => handleSizeClick('M')}>M</button>
-                <button className="btn" onClick={() => handleSizeClick('L')}>L</button>
-                <button className="btn" onClick={() => handleSizeClick('XL')}>XL</button>
-                <button className="btn" onClick={() => handleSizeClick('XXL')}>XXL</button>
+                <button className="btn" style={{ backgroundColor: buttonColors['XS'] }} onClick={() => handleSizeClick('XS')}>XS</button>
+                <button className="btn" style={{ backgroundColor: buttonColors['S'] }} onClick={() => handleSizeClick('S')}>S</button>
+                <button className="btn" style={{ backgroundColor: buttonColors['M'] }} onClick={() => handleSizeClick('M')}>M</button>
+                <button className="btn" style={{ backgroundColor: buttonColors['L'] }} onClick={() => handleSizeClick('L')}>L</button>
+                <button className="btn" style={{ backgroundColor: buttonColors['XL'] }} onClick={() => handleSizeClick('XL')}>XL</button>
+                <button className="btn" style={{ backgroundColor: buttonColors['XXL'] }} onClick={() => handleSizeClick('XXL')}>XXL</button>
               </>
             )}
           </div>
