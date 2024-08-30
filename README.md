@@ -1,40 +1,50 @@
-# E-Commerce Application
+# Hanami Clothing Store
 
-## Individual Product Page
+Welcome to the Hanami Clothing Store!
 
-### Navigation
-- Clicking on a product card from the Home page navigates to the product's individual page within the same tab.
+## About
 
-### Size Selection
-- For in-stock products, users can select sizes from XS to XXL.
-- Sizes are disabled for out-of-stock products.
+Hanami Clothing Store is a modern web application built using React and TypeScript. It offers a seamless shopping experience where users can browse, search, and manage clothing items with ease. Our application features a clean and user-friendly interface to enhance your shopping journey.
 
-### Wishlist
-- Users can add or remove products from their wishlist.
-- Wishlist status persists across the Home page and individual product pages.
+## Features
 
-### Add to Cart
-- Clicking "Add to Cart" adds the product to the cart or increases the quantity if already present.
-- The button transforms into "Go to Cart" after adding the product.
-- Clicking "Go to Cart" navigates to the Cart page.
+**Search**: Locate products quickly by keyword. Results include both sale and regular items. If no products match your search, a "no products available" message will be shown.
+**Add to Cart**: Add items to your shopping cart with a simple click on "Add to Cart" button. The cart count is dynamically updated in the navbar.
+**Wishlist**: Save your favorite items to a wishlist. A heart icon indicates which products have been saved.
+**Stock Notification**: Receive alerts when an item is out of stock, with a "Notify Me" button displayed.
 
-## Cart Page
+## Overview
 
-### Navigation
-- Clicking the cart/bag icon in the Navbar takes users to the Cart page.
-
-### Remove from Cart
-- Clicking "Remove from Cart" triggers a confirmation pop-up.
-- The pop-up asks: "Are you sure you want to remove this item from the cart?" with Yes and No options.
-- Clicking Yes removes the item from the cart, while No keeps the item with its current quantity.
-
-## Development Notes
+**Browse Items**: Explore a diverse range of clothing products.
+**Search and Filter**: Utilize search functionality to find specific products.
+**Manage Shopping Cart**: Add and view items in your cart.
+**Wishlist Functionality**: Save and manage your favorite items.
+**Stock Notifications**: Receive alerts when an item is not available.
 
 
-### How to Run
-1. Clone the repository: `git clone https://github.com/username/repository.git`
-2. Navigate to the project directory: `cd repository`
-3. Install dependencies: `npm install` or `yarn install`
-4. Start the development server: `npm start` or `yarn start`
+## System Requirements
 
+**Node.js**: v20 or later
+**npm**: v8 or later
 
+## Technologies Used 
+
+React
+Typescript
+
+## Installation
+
+1. To clone the repository:
+   bash
+   git clone https://github.com/sreevani10/Hanami_Store.git
+   
+
+2. To install dependencies:
+   bash
+   npm install
+
+## Usage
+
+To run the project, use the following command:
+npm start 
+Available at http://localhost:3000
