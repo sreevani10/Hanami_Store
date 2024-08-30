@@ -16,11 +16,8 @@ const Products = ()  => {
     setCartCount(cartCount + 1);
     if(product) setCart([...cart, product]);
   };
-  
     const sale = SaleItems.filter(products =>products.sale === true && products.outOfStock === false) ;
     const products = SaleItems.filter(item =>item.sale === false);
-   
-   
     const[saleitems,setSaleItems] = useState(sale);
     const[items,setItems] = useState(products);
     function search(value:string){
@@ -36,13 +33,9 @@ const Products = ()  => {
           }
     }
 
-      
-  
-
     return (
         <>
          <Navbar search={search}/>
-
         <div>
             <h1 className="heading">Exclusive Sale</h1>
             <p className="tag">Get in on the trend with our curated selection of best-selling styles.</p>

@@ -2,7 +2,6 @@ import React, { useContext,useState } from "react";
 import { CartContext } from "../../Context/CartContext";
 import { IoSearch } from "react-icons/io5";
 import { PiBagBold } from "react-icons/pi";
-// import logo from '../../../public/Assets/logo.png'
 import { useNavigate } from "react-router-dom";
 import './Navbar.css'
 
@@ -10,10 +9,7 @@ import './Navbar.css'
 const Navbar = ({ search} : { search:(value:string)=>void}) =>{
 
     const {cartCount} = useContext(CartContext);
-   
     const navigate = useNavigate();
-
-
     const[value,setValue] = useState("");
     function searchHandler(click: any){
              const newValue=click.target.value 

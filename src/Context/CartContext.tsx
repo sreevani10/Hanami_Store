@@ -13,7 +13,6 @@ type TCartProduct = {
     outOfStock?: boolean,
     tag?:boolean,
     size?:string,
-    // count:number;
 }
 interface Cart {
     cart:TCartProduct[],
@@ -24,13 +23,9 @@ interface Cart {
 
 const CartContext = createContext<Cart>({cart: [],setCart: () => {},cartCount: 0, setCartCount: () => {}, });
 
-
 const CartProvider = ({children}:any) => {
     const [cartCount, setCartCount] = useState(0);
     const [cart,setCart] = useState<TCartProduct[]>([]);
-
-
-
 return(
     <CartContext.Provider value = {{cart,setCart,cartCount,setCartCount}}>
        {children} 

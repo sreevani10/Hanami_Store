@@ -1,9 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { CartContext } from '../../Context/CartContext';
-
 import SaleItems from "../../data/SaleItems.json"
 import { useParams } from 'react-router-dom';
-import Product from '../Product/Product';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
 import './ProductPage.css'
@@ -12,29 +10,23 @@ import { toast, ToastContainer } from 'react-toastify';
 import { WishlistContext } from '../../Context/WishlistContext';
 
 const ProductPage = () => {
-
   const { cart,setCart,cartCount, setCartCount} = useContext(CartContext);
   const [selectedSize, setSelectedSize] = useState('M')
-
   const handleIncrement = (id:number |undefined) => {
     const product = SaleItems.find((product) => (product.id) === id);
     if(product){
       const productWithSize = { ...product, size: selectedSize, quantity:1 };
-    
     setCartCount(cartCount + 1);
     if(!cart.find((item)=>item.id==id))
     {
       if(product)setCart([...cart, productWithSize]);
     }
-    setIsInCart(true);
-    
+    setIsInCart(true); 
   };
 }
 
   const navigate = useNavigate();
   const [isInCart, setIsInCart] = useState(false);
-  
-
   const { wishlist, addWishlist, removeWishlist } = useContext(WishlistContext);
   const handleWishlist = () => {
     if (wishlist.includes(Number(id))) {
@@ -42,22 +34,15 @@ const ProductPage = () => {
     } else {
       addWishlist(Number(id));
     }}    
-
-  
-
-
     const handleSizeClick = (size:string) => {
       setSelectedSize(size);
     };
-    
-
   const { id } = useParams();
   if(!id){
     return <></>
   }
   const product = SaleItems.find((product) => (product.id) === parseInt(id));
   console.log(product?.imgUrl);
-
 const notify=(event:any)=>{
   event.currentTarget.disabled=true;
   toast("out of stock")

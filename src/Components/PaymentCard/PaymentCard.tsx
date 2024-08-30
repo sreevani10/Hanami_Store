@@ -3,18 +3,11 @@ import { toast } from 'react-toastify';
 import { TCartProduct } from '../../Context/CartContext';
 import './PaymentCard.css'
 
-
-
-
-  
-
 const PaymentCard = ({ cart, setCart ,setCartCount}:{cart : TCartProduct[], setCart : (cart:TCartProduct[])=> void, setCartCount:(count:number)=> void}) => {
   const handleOrderNow = () => {
       const finalTotal = total;
       toast.success(`Thanks for shopping!! Please visit again. Total amount: ₹${finalTotal}`);
-      setTimeout(()=> {  setCart([]) ; setCartCount(0)}, 2000);
-
-    
+      setTimeout(()=> {  setCart([]) ; setCartCount(0)}, 2000);  
   };
 
   let price = 0;
@@ -27,10 +20,6 @@ const PaymentCard = ({ cart, setCart ,setCartCount}:{cart : TCartProduct[], setC
     }
     total += (product.price * (product.quantity)) - (discount*product.quantity);
   });
-
-  
-
-
   return (
     <div className="payment-body">
                        <h1>Payment Details</h1>

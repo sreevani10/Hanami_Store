@@ -7,10 +7,9 @@ import "react-toastify/dist/ReactToastify.css";
 import "react-toastify/dist/ReactToastify.css";
 import './Cart.css'
 import PaymentCard from '../PaymentCard/PaymentCard';
-import Navbar from "../Navbar/Navbar";
+
 const Cart = () => {
     const {cart,setCart,setCartCount} = useContext(CartContext);
-    
     const handleIncrement = (id: number) => {
         const updatedCart = cart.map((product) => {
           if ((product.id) === id) {
@@ -20,7 +19,6 @@ const Cart = () => {
         });
         setCart(updatedCart);
       };
-    
       const handleDecrement = (id: number) => {
         const updatedCart = cart.map((product) => {
           if ((product.id) === id) {
@@ -52,8 +50,6 @@ const Cart = () => {
         });
         setCart(updatedCart);
       };
-    
-    
       const handleRemove = (id: number) => {
         showPopUp({
             title: 'Confirm to delete',
@@ -77,14 +73,8 @@ const Cart = () => {
             ]
         });
 };
-    
-
-
-  
-
     return (
         <>
-       
         {cart.length === 0 ?  <p className="cart-tag">Your cart feels very light!</p> : 
         <div className="cart-payment">
         <div className="total-card">
@@ -103,18 +93,13 @@ const Cart = () => {
                     </div>
                     <p className="product-price">Rs.{product.price}</p>
                     <button className="remove-cart" onClick={()=>handleRemove(product.id)} >Remove from cart</button>
-                    
-                
                     </div>
                 </div>
-            ))}
-            
-        </div>
-                
+            ))} 
+        </div>       
         </div>
         <PaymentCard cart={cart} setCart={setCart} setCartCount={setCartCount} />
         </div>
-
         } 
         </>
     );
